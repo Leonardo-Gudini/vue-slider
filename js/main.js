@@ -33,7 +33,24 @@ var vueApp = new Vue({
                 description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
             },
         ]
-    }
+    },
 
-    
+    methods: {
+        arrowNext() {
+            if(this.currentSlide == (this.images.length - 1)) {
+                this.currentSlide = 0;
+            }else{
+                this.currentSlide++;
+            }
+            
+        },
+
+        arrowPrev() {
+            if(this.currentSlide == 0){
+                this.currentSlide = this.images.length - 1;
+            }else{
+                this.currentSlide--;
+            }
+        }
+    }
 });
